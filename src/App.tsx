@@ -6,8 +6,6 @@
 import React, { useState, useEffect } from 'react';
 import { Instagram, Phone, ChevronLeft, Gem, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
-import cristalLogo from './assets/cristal-reva-logo.png';
-import chaplinLogo from './assets/chaplin.jpg';
 
 const SnapchatIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="-50 -50 548 612" fill="#ffffff" stroke="#000000" strokeWidth="45" strokeLinejoin="round">
@@ -127,7 +125,7 @@ export default function App() {
           
           {/* Crystal Logo Image */}
           <img 
-            src={cristalLogo} 
+            src="/cristal-reva-logo.png" 
             alt="Cristal Reva Logo" 
             className="w-full h-full object-contain relative z-10 transform group-hover:scale-105 transition-transform duration-500"
             style={{ 
@@ -228,7 +226,7 @@ export default function App() {
           </span>
           <div className="w-10 h-10 rounded-full overflow-hidden border border-amber-500/30 shadow-[0_0_15px_rgba(251,191,36,0.15)] flex-shrink-0 bg-[#0a0a0a] flex items-center justify-center">
             <img 
-              src={chaplinLogo} 
+              src="/chaplin.jpg" 
               alt="Chaplin Chap Logo" 
               className="w-full h-full object-cover"
             />
