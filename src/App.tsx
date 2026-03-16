@@ -3,8 +3,59 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Instagram, Phone, ChevronLeft, Gem, MapPin, Ghost } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Instagram, Phone, ChevronLeft, Gem, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
+
+const SnapchatIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="-40 -40 528 592" fill="#ffffff" stroke="#000000" strokeWidth="35" strokeLinejoin="round">
+    <path d="M439.8 320.5c-10.6-16.4-27-22.3-46.4-22.3-11.8 0-23.8 2.5-34.8 6.8-1.5-10.6-2.8-21.3-2.8-32 0-60.9-33.1-115.3-86.7-143.5V86.4C269.1 38.9 229.9 0 181.6 0s-87.5 38.9-87.5 86.4v43.1C40.5 157.7 7.4 212.1 7.4 273c0 10.7-1.3 21.4-2.8 32-11 4.3-23 6.8-34.8 6.8-19.4 0-35.8-5.9-46.4-22.3-2.4-3.7-6.5-5.9-10.9-5.9-6.8 0-12.4 5.5-12.4 12.4 0 3.3 1.3 6.5 3.6 8.8 21.6 21.6 51.3 33.5 81.8 33.5 13.5 0 27-2.4 39.8-7.1 11.2 25.9 33.1 45.4 60.1 53.5 14.4 4.3 29.8 6.5 45.4 6.5 15.6 0 31-2.2 45.4-6.5 27-8.1 48.9-27.6 60.1-53.5 12.8 4.7 26.3 7.1 39.8 7.1 30.5 0 60.2-11.9 81.8-33.5 2.3-2.3 3.6-5.5 3.6-8.8 0-6.8-5.5-12.4-12.4-12.4-4.4 0-8.5 2.2-10.9 5.9z"/>
+  </svg>
+);
+
+const GoldSparkles = () => {
+  const [sparkles, setSparkles] = useState<{ id: number; x: number; size: number; delay: number; duration: number }[]>([]);
+
+  useEffect(() => {
+    // Generate 35 random sparkles
+    const newSparkles = Array.from({ length: 35 }).map((_, i) => ({
+      id: i,
+      x: Math.random() * 100, // Random horizontal position (vw)
+      size: Math.random() * 8 + 4, // Random size between 4px and 12px
+      delay: Math.random() * 1.5, // Random delay up to 1.5s
+      duration: Math.random() * 3 + 2.5, // Random fall duration between 2.5s and 5.5s
+    }));
+    setSparkles(newSparkles);
+  }, []);
+
+  return (
+    <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+      {sparkles.map((sparkle) => (
+        <motion.div
+          key={sparkle.id}
+          initial={{ y: -50, x: `${sparkle.x}vw`, opacity: 0, rotate: 0 }}
+          animate={{ 
+            y: '100vh', 
+            opacity: [0, 1, 1, 0],
+            rotate: [0, 180, 360] 
+          }}
+          transition={{ 
+            duration: sparkle.duration, 
+            delay: sparkle.delay, 
+            ease: "easeInOut" 
+          }}
+          className="absolute top-0 bg-gradient-to-br from-amber-200 to-amber-500 shadow-[0_0_10px_rgba(251,191,36,0.8)]"
+          style={{ 
+            width: sparkle.size, 
+            height: sparkle.size,
+            // A beautiful star shape
+            clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)'
+          }}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default function App() {
   const links = [
@@ -20,7 +71,7 @@ export default function App() {
       name: 'سناپچات',
       username: 'cristalrevacr20',
       url: 'https://www.snapchat.com/add/cristalrevacr20',
-      icon: <Ghost className="w-7 h-7 text-black" strokeWidth={1.5} />,
+      icon: <SnapchatIcon className="w-8 h-8" />,
       bgGlow: 'bg-[#FFFC00] shadow-[0_0_20px_rgba(255,252,0,0.5)]',
       hoverClass: 'hover:border-yellow-400/50 hover:bg-white/10',
     },
@@ -50,6 +101,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#030303] text-zinc-100 flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans" dir="rtl">
+      <GoldSparkles />
+      
       {/* Background Ambient Glows */}
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-amber-900/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-amber-600/10 rounded-full blur-[120px] pointer-events-none" />
@@ -120,7 +173,7 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
 
               {/* Icon Container */}
-              <div className={`relative flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center ${link.bgGlow} z-10`}>
+              <div className={`relative flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center ${link.bgGlow} z-10`}>
                 {link.icon}
               </div>
               
