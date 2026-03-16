@@ -8,7 +8,7 @@ import { Instagram, Phone, ChevronLeft, Gem, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const SnapchatIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="-40 -40 528 592" fill="#ffffff" stroke="#000000" strokeWidth="35" strokeLinejoin="round">
+  <svg className={className} viewBox="-50 -50 548 612" fill="#ffffff" stroke="#000000" strokeWidth="45" strokeLinejoin="round">
     <path d="M439.8 320.5c-10.6-16.4-27-22.3-46.4-22.3-11.8 0-23.8 2.5-34.8 6.8-1.5-10.6-2.8-21.3-2.8-32 0-60.9-33.1-115.3-86.7-143.5V86.4C269.1 38.9 229.9 0 181.6 0s-87.5 38.9-87.5 86.4v43.1C40.5 157.7 7.4 212.1 7.4 273c0 10.7-1.3 21.4-2.8 32-11 4.3-23 6.8-34.8 6.8-19.4 0-35.8-5.9-46.4-22.3-2.4-3.7-6.5-5.9-10.9-5.9-6.8 0-12.4 5.5-12.4 12.4 0 3.3 1.3 6.5 3.6 8.8 21.6 21.6 51.3 33.5 81.8 33.5 13.5 0 27-2.4 39.8-7.1 11.2 25.9 33.1 45.4 60.1 53.5 14.4 4.3 29.8 6.5 45.4 6.5 15.6 0 31-2.2 45.4-6.5 27-8.1 48.9-27.6 60.1-53.5 12.8 4.7 26.3 7.1 39.8 7.1 30.5 0 60.2-11.9 81.8-33.5 2.3-2.3 3.6-5.5 3.6-8.8 0-6.8-5.5-12.4-12.4-12.4-4.4 0-8.5 2.2-10.9 5.9z"/>
   </svg>
 );
@@ -71,8 +71,8 @@ export default function App() {
       name: 'سناپچات',
       username: 'cristalrevacr20',
       url: 'https://www.snapchat.com/add/cristalrevacr20',
-      icon: <SnapchatIcon className="w-8 h-8" />,
-      bgGlow: 'bg-[#FFFC00] shadow-[0_0_20px_rgba(255,252,0,0.5)]',
+      icon: <SnapchatIcon className="w-9 h-9" />,
+      bgGlow: 'bg-[#FFFC00] shadow-[0_0_25px_rgba(255,252,0,0.7)]',
       hoverClass: 'hover:border-yellow-400/50 hover:bg-white/10',
     },
     {
@@ -118,19 +118,26 @@ export default function App() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative w-36 h-36 rounded-full bg-gradient-to-tr from-amber-200 via-yellow-500 to-amber-700 p-[2px] mb-8 shadow-[0_0_50px_rgba(245,158,11,0.2)] group"
+          className="relative w-48 h-48 mb-6 group flex items-center justify-center"
         >
-          <div className="w-full h-full rounded-full bg-[#050505] flex items-center justify-center overflow-hidden border-4 border-[#030303] relative">
-            {/* Inner Glow */}
-            <div className="absolute inset-0 bg-gradient-to-b from-amber-500/10 to-transparent" />
-            
-            {/* Crystal Icon */}
-            <Gem className="w-16 h-16 text-amber-400 drop-shadow-[0_0_15px_rgba(251,191,36,0.6)] transform group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
-            
-            {/* Sparkles */}
-            <div className="absolute top-6 right-8 w-1 h-1 bg-white rounded-full shadow-[0_0_5px_white] animate-pulse" />
-            <div className="absolute bottom-8 left-8 w-1.5 h-1.5 bg-amber-200 rounded-full shadow-[0_0_8px_rgba(253,230,138,1)] animate-pulse delay-300" />
-          </div>
+          {/* Background Glow */}
+          <div className="absolute inset-0 bg-amber-500/20 blur-3xl rounded-full transform group-hover:scale-110 transition-transform duration-500" />
+          
+          {/* Crystal Logo Image */}
+          <img 
+            src="/cristal-reva-logo.png" 
+            alt="Cristal Reva Logo" 
+            className="w-full h-full object-contain relative z-10 transform group-hover:scale-105 transition-transform duration-500"
+            style={{ 
+              filter: "invert(1) contrast(500%) sepia(100%) saturate(500%) hue-rotate(350deg)",
+              mixBlendMode: "screen"
+            }}
+            referrerPolicy="no-referrer"
+          />
+          
+          {/* Sparkles */}
+          <div className="absolute top-4 right-10 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_white] animate-pulse z-20" />
+          <div className="absolute bottom-6 left-10 w-2 h-2 bg-amber-200 rounded-full shadow-[0_0_10px_rgba(253,230,138,1)] animate-pulse delay-300 z-20" />
         </motion.div>
 
         {/* Title & Address */}
@@ -173,7 +180,7 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
 
               {/* Icon Container */}
-              <div className={`relative flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center ${link.bgGlow} z-10`}>
+              <div className={`relative flex-shrink-0 w-14 h-14 ${link.name === 'سناپچات' ? 'rounded-[14px]' : 'rounded-full'} flex items-center justify-center ${link.bgGlow} z-10`}>
                 {link.icon}
               </div>
               
@@ -205,6 +212,26 @@ export default function App() {
             <p className="text-amber-300 font-serif text-lg tracking-wide drop-shadow-[0_0_15px_rgba(251,191,36,0.6)] leading-relaxed">
               "لەبیرت نەچێت جوانی تۆ بۆ ئێمە گرینگە"
             </p>
+          </div>
+        </motion.div>
+
+        {/* Developer Credit */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
+          className="mt-8 mb-4 flex items-center justify-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300"
+        >
+          <span className="text-xs sm:text-sm text-zinc-400 font-light tracking-wider">
+            دروستکراوە لە لایەن چاپلین چاپەوە
+          </span>
+          <div className="w-10 h-10 rounded-full overflow-hidden border border-amber-500/30 shadow-[0_0_15px_rgba(251,191,36,0.15)] flex-shrink-0 bg-[#0a0a0a] flex items-center justify-center">
+            <img 
+              src="/chaplin.jpg" 
+              alt="Chaplin Chap Logo" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
           </div>
         </motion.div>
       </motion.div>
