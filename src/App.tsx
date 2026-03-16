@@ -134,7 +134,6 @@ export default function App() {
               filter: "invert(1) contrast(500%) sepia(100%) saturate(500%) hue-rotate(350deg)",
               mixBlendMode: "screen"
             }}
-            referrerPolicy="no-referrer"
           />
           
           {/* Sparkles */}
@@ -232,7 +231,6 @@ export default function App() {
               src={chaplinLogo} 
               alt="Chaplin Chap Logo" 
               className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
             />
           </div>
         </motion.div>
