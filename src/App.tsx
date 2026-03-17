@@ -59,6 +59,7 @@ const GoldSparkles = () => {
   );
 };
 
+// Main App Component for Cristal Reva
 export default function App() {
   const links = [
     {
