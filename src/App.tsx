@@ -153,21 +153,19 @@ export default function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="mt-8 mb-4 flex items-center justify-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300"
+          className="mt-8 mb-4 flex flex-col items-center justify-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300"
         >
-          <div className="h-10 flex-shrink-0 flex items-center justify-center">
+          <span className="text-xs sm:text-sm text-zinc-400 font-light tracking-wider">
+            دروستکراوە لە لایەن
+          </span>
+          <div className="h-10 bg-white/90 px-3 py-1.5 rounded-lg flex items-center justify-center shadow-lg">
              <img 
                src={chaplinLogo} 
                alt="Chaplin Print" 
-               className="h-full w-auto object-contain mix-blend-screen"
-               style={{ 
-                 filter: 'contrast(2.5) brightness(0.8)'
-               }}
+               className="h-full w-auto object-contain mix-blend-multiply"
+               style={{ filter: 'contrast(1.2)' }}
              />
           </div>
-          <span className="text-xs sm:text-sm text-zinc-400 font-light tracking-wider">
-            دروستکراوە لە لایەن چاپلین چاپەوە
-          </span>
         </motion.div>
       </motion.div>
     </div>
