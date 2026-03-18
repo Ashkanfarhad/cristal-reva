@@ -2,7 +2,6 @@ import React from 'react';
 import { Instagram, Phone, ChevronLeft, MapPin, Facebook } from 'lucide-react';
 import { motion } from 'motion/react';
 import { logoBase64 } from './logo';
-import chaplinLogo from './assets/chaplin-logo.jpg';
 
 const LINKS = [
   {
@@ -153,17 +152,16 @@ export default function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="mt-8 mb-4 flex flex-col items-center justify-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300"
+          className="mt-10 mb-6 flex flex-col items-center justify-center gap-3 opacity-70 hover:opacity-100 transition-opacity duration-300"
         >
-          <span className="text-xs sm:text-sm text-zinc-400 font-light tracking-wider">
+          <span className="text-xs sm:text-sm text-zinc-500 font-light tracking-wider">
             دروستکراوە لە لایەن
           </span>
-          <div className="h-10 bg-white/90 px-3 py-1.5 rounded-lg flex items-center justify-center shadow-lg">
+          <div className="h-14 bg-black px-5 py-2 rounded-2xl border border-white/10 flex items-center justify-center shadow-lg">
              <img 
-               src={chaplinLogo} 
+               src="https://i.ibb.co/rRShnzK8/chaplin.jpg" 
                alt="Chaplin Print" 
-               className="h-full w-auto object-contain mix-blend-multiply"
-               style={{ filter: 'invert(1) contrast(1.2)' }}
+               className="h-full w-auto object-contain mix-blend-screen"
              />
           </div>
         </motion.div>
