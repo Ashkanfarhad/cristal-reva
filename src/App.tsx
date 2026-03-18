@@ -1,7 +1,6 @@
 import React from 'react';
 import { Instagram, Phone, ChevronLeft, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
-import { logoBase64 } from './logo';
 
 const LINKS = [
   {
@@ -82,18 +81,25 @@ export default function App() {
         <div className="relative w-48 h-48 mb-6 group flex items-center justify-center">
           <div className="absolute inset-0 bg-amber-500/20 blur-3xl rounded-full transform group-hover:scale-110 transition-transform duration-500"></div>
           
-          <div className="relative w-full h-full z-10 transform group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
-            <img 
-              src={logoBase64} 
+          <motion.div 
+            className="relative w-full h-full z-10 flex items-center justify-center"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <motion.img 
+              src="https://i.ibb.co/4nmYRhrL/cropped-circle-image-1.png" 
               alt="Cristal Reva" 
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain cursor-pointer drop-shadow-[0_0_15px_rgba(251,191,36,0.5)]"
               style={{ 
                 filter: 'invert(1) sepia(1) saturate(5) hue-rotate(-10deg) contrast(1.2)',
                 mixBlendMode: 'screen'
               }}
               referrerPolicy="no-referrer"
+              whileHover={{ scale: 1.08, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="flex flex-col items-center mb-10">
