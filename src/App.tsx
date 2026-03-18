@@ -2,6 +2,7 @@ import React from 'react';
 import { Instagram, Phone, ChevronLeft, MapPin, Facebook } from 'lucide-react';
 import { motion } from 'motion/react';
 import { logoBase64 } from './logo';
+import chaplinLogo from './assets/chaplin.jpg';
 
 const LINKS = [
   {
@@ -154,12 +155,15 @@ export default function App() {
           transition={{ delay: 0.8 }}
           className="mt-8 mb-4 flex items-center justify-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300"
         >
-          <div className="w-10 h-10 rounded-full overflow-hidden border border-amber-500/30 shadow-[0_0_15px_rgba(251,191,36,0.15)] flex-shrink-0 bg-[#0a0a0a] flex items-center justify-center">
+          <div className="w-10 h-10 rounded-full overflow-hidden border border-amber-500/30 shadow-[0_0_15px_rgba(251,191,36,0.15)] flex-shrink-0 bg-transparent flex items-center justify-center">
              <img 
-               src="https://cristalreva.netlify.app/assets/chaplin-logo-CXkBS7jK.jpg" 
+               src={chaplinLogo} 
                alt="Chaplin Print" 
-               className="w-full h-full object-cover"
-               referrerPolicy="no-referrer"
+               className="w-full h-full object-contain"
+               style={{ 
+                 mixBlendMode: 'screen',
+                 filter: 'contrast(1.2) brightness(1.1)'
+               }}
              />
           </div>
           <span className="text-xs sm:text-sm text-zinc-400 font-light tracking-wider">
