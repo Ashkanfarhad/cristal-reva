@@ -155,14 +155,13 @@ export default function App() {
           transition={{ delay: 0.8 }}
           className="mt-8 mb-4 flex items-center justify-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300"
         >
-          <div className="w-10 h-10 rounded-full overflow-hidden border border-amber-500/30 shadow-[0_0_15px_rgba(251,191,36,0.15)] flex-shrink-0 bg-transparent flex items-center justify-center">
+          <div className="h-10 flex-shrink-0 flex items-center justify-center">
              <img 
                src={chaplinLogo} 
                alt="Chaplin Print" 
-               className="w-full h-full object-contain"
+               className="h-full w-auto object-contain mix-blend-screen"
                style={{ 
-                 mixBlendMode: 'screen',
-                 filter: 'contrast(1.2) brightness(1.1)'
+                 filter: 'contrast(2.5) brightness(0.8)'
                }}
              />
           </div>
