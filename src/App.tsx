@@ -165,7 +165,7 @@ export default function App() {
           className="mt-10 mb-6 flex flex-col items-center justify-center gap-3 opacity-70 hover:opacity-100 transition-opacity duration-300"
         >
           <span className="text-xs sm:text-sm text-zinc-500 font-light tracking-wider">
-            دروستکراوە لە لایەن
+            دروستکاروە لەلایەن (چاپلین چاپەوە)
           </span>
           <div className="h-14 bg-black px-5 py-2 rounded-2xl border border-white/10 flex items-center justify-center shadow-lg">
              <img 
