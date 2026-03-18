@@ -2,7 +2,7 @@ import React from 'react';
 import { Instagram, Phone, ChevronLeft, MapPin, Facebook } from 'lucide-react';
 import { motion } from 'motion/react';
 import { logoBase64 } from './logo';
-import chaplinLogo from './assets/chaplin.jpg';
+import chaplinLogo from './assets/chaplin-logo.jpg';
 
 const LINKS = [
   {
@@ -163,7 +163,7 @@ export default function App() {
                src={chaplinLogo} 
                alt="Chaplin Print" 
                className="h-full w-auto object-contain mix-blend-multiply"
-               style={{ filter: 'contrast(1.2)' }}
+               style={{ filter: 'invert(1) contrast(1.2)' }}
              />
           </div>
         </motion.div>
