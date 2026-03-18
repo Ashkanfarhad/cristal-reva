@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Phone, ChevronLeft, MapPin, Facebook } from 'lucide-react';
+import { Instagram, Phone, ChevronLeft, MapPin } from 'lucide-react';
 import { motion } from 'motion/react';
 import { logoBase64 } from './logo';
 
@@ -28,13 +28,17 @@ const LINKS = [
     iconColor: 'text-black'
   },
   {
-    name: 'فەیسبووک',
-    username: 'cristal_reva',
-    icon: <Facebook className="w-7 h-7 text-white" fill="currentColor" />,
-    url: 'fb://facewebmodal/f?href=https://www.facebook.com/cristal_reva',
-    fallbackUrl: 'https://www.facebook.com/cristal_reva',
-    iconBg: 'bg-[#1877F2]',
-    iconShadow: 'shadow-[0_0_20px_rgba(24,119,242,0.5)]'
+    name: 'تیکتۆک',
+    username: '@cristal.reva',
+    icon: (
+      <svg className="w-6 h-6 text-white" viewBox="0 0 448 512">
+        <path fill="currentColor" d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
+      </svg>
+    ),
+    url: 'tiktok://user?screen_name=cristal.reva',
+    fallbackUrl: 'https://www.tiktok.com/@cristal.reva',
+    iconBg: 'bg-black',
+    iconShadow: 'shadow-[0_0_20px_rgba(255,255,255,0.2)] border border-white/20'
   },
   {
     name: 'پەیوەندی کردن',
