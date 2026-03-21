@@ -7,11 +7,13 @@ import {defineConfig, loadEnv} from 'vite';
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
+    base: './', // Add relative base path for GitHub Pages
     plugins: [
       react(), 
       tailwindcss(),
       legacy({
-        targets: ['defaults', 'not IE 11'],
+        targets: ['defaults', 'not IE 11', 'iOS >= 9', 'Android >= 4.4'],
+        additionalLegacyPolyfills: ['regenerator-runtime/runtime']
       })
     ],
     define: {
