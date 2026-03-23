@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Phone, ChevronLeft, MapPin } from 'lucide-react';
+import { Instagram, Phone, ChevronLeft, MapPin, Printer } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const LINKS = [
@@ -47,7 +47,7 @@ const LINKS = [
     fallbackUrl: 'tel:+9647501949446',
     iconBg: 'bg-emerald-500',
     iconShadow: 'shadow-[0_0_20px_rgba(16,185,129,0.5)]'
-  },
+  }
 ];
 
 export default function App() {
@@ -158,23 +158,40 @@ export default function App() {
         </motion.div>
 
         {/* Footer */}
-        <motion.div 
+        <motion.a 
+          href="https://chaplin-chap.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="mt-10 mb-6 flex flex-col items-center justify-center gap-3 opacity-70 hover:opacity-100 transition-opacity duration-300"
+          className="mt-10 mb-8 flex flex-col items-center justify-center gap-5 opacity-90 hover:opacity-100 transition-all duration-300 group cursor-pointer"
         >
-          <span className="text-xs sm:text-sm text-zinc-500 font-light tracking-wider">
-            دروستکاروە لەلایەن (چاپلین چاپەوە)
+          <span className="text-sm sm:text-base text-zinc-400 font-light tracking-wider group-hover:text-amber-200/80 transition-colors">
+            دروستکاروە لەلایەن (چاپلین چاپ)
           </span>
-          <div className="h-14 bg-black px-5 py-2 rounded-2xl border border-white/10 flex items-center justify-center shadow-lg">
+          
+          <div className="h-20 bg-black/50 px-6 py-3 rounded-2xl border border-white/10 flex items-center justify-center shadow-lg group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-all">
              <img 
                src="https://i.ibb.co/rRShnzK8/chaplin.jpg" 
                alt="Chaplin Print" 
-               className="h-full w-auto object-contain mix-blend-screen"
+               className="h-full w-auto object-contain mix-blend-screen transform group-hover:scale-110 transition-transform duration-300"
              />
           </div>
-        </motion.div>
+
+          {/* Beautiful Caplin Chap Button */}
+          <div className="relative group/btn mt-2">
+            <div className="absolute -inset-1 bg-gradient-to-r from-amber-600 via-yellow-400 to-amber-600 rounded-full blur opacity-40 group-hover/btn:opacity-100 transition duration-500 group-hover/btn:duration-200 animate-pulse"></div>
+            <div className="relative flex items-center gap-3 px-8 py-3.5 bg-zinc-950 rounded-full border border-amber-500/50 leading-none shadow-2xl">
+              <span className="text-amber-400 font-bold tracking-widest uppercase text-sm sm:text-base group-hover/btn:text-amber-300 transition-colors drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
+                Caplin Chap
+              </span>
+              <svg className="w-5 h-5 text-amber-400 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </div>
+          </div>
+        </motion.a>
       </motion.div>
     </div>
   );
