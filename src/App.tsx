@@ -170,7 +170,7 @@ export default function App() {
           <div className="flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 group-hover:bg-amber-500/10 group-hover:border-amber-500/40 transition-all duration-300 shadow-sm relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-500/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
             <span className="text-sm sm:text-base text-zinc-300 font-medium tracking-wider group-hover:text-amber-300 transition-colors z-10 flex items-center gap-2">
-              دروستکاروە لەلایەن <span className="text-amber-500 font-bold group-hover:text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]">(چاپلین چاپ)</span>
+              دروستکراوە لە لایەن <span className="text-amber-500 font-bold group-hover:text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]">(چاپلین چاپ)</span>
               <ExternalLink className="w-4 h-4 text-amber-500/70 group-hover:text-amber-400 group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-300" />
             </span>
           </div>
