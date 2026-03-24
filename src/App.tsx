@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Phone, ChevronLeft, MapPin, Printer } from 'lucide-react';
+import { Instagram, Phone, ChevronLeft, MapPin, Printer, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const LINKS = [
@@ -167,24 +167,37 @@ export default function App() {
           transition={{ delay: 0.8 }}
           className="mt-10 mb-8 flex flex-col items-center justify-center gap-5 opacity-90 hover:opacity-100 transition-all duration-300 group cursor-pointer"
         >
-          <span className="text-sm sm:text-base text-zinc-400 font-light tracking-wider group-hover:text-amber-200/80 transition-colors">
-            دروستکاروە لەلایەن (چاپلین چاپ)
-          </span>
+          <div className="flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 group-hover:bg-amber-500/10 group-hover:border-amber-500/40 transition-all duration-300 shadow-sm relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-500/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+            <span className="text-sm sm:text-base text-zinc-300 font-medium tracking-wider group-hover:text-amber-300 transition-colors z-10 flex items-center gap-2">
+              دروستکاروە لەلایەن <span className="text-amber-500 font-bold group-hover:text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]">(چاپلین چاپ)</span>
+              <ExternalLink className="w-4 h-4 text-amber-500/70 group-hover:text-amber-400 group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 transition-all duration-300" />
+            </span>
+          </div>
           
           <div className="h-20 bg-black/50 px-6 py-3 rounded-2xl border border-white/10 flex items-center justify-center shadow-lg group-hover:border-amber-500/30 group-hover:shadow-[0_0_20px_rgba(251,191,36,0.15)] transition-all">
-             <img 
-               src="https://i.ibb.co/rRShnzK8/chaplin.jpg" 
-               alt="Chaplin Print" 
-               className="h-full w-auto object-contain mix-blend-screen transform group-hover:scale-110 transition-transform duration-300"
-             />
+             <motion.div
+               className="h-full flex items-center justify-center"
+               animate={{ y: [0, -10, 0] }}
+               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+             >
+               <motion.img 
+                 src="https://i.ibb.co/rRShnzK8/chaplin.jpg" 
+                 alt="Chaplin Print" 
+                 className="h-full w-auto object-contain mix-blend-screen"
+                 whileHover={{ scale: 1.08, rotate: 5 }}
+                 whileTap={{ scale: 0.95 }}
+                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
+               />
+             </motion.div>
           </div>
 
-          {/* Beautiful Caplin Chap Button */}
+          {/* Beautiful Chaplin Chap Button */}
           <div className="relative group/btn mt-2">
             <div className="absolute -inset-1 bg-gradient-to-r from-amber-600 via-yellow-400 to-amber-600 rounded-full blur opacity-40 group-hover/btn:opacity-100 transition duration-500 group-hover/btn:duration-200 animate-pulse"></div>
             <div className="relative flex items-center gap-3 px-8 py-3.5 bg-zinc-950 rounded-full border border-amber-500/50 leading-none shadow-2xl">
               <span className="text-amber-400 font-bold tracking-widest uppercase text-sm sm:text-base group-hover/btn:text-amber-300 transition-colors drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]">
-                Caplin Chap
+                Chaplin Chap
               </span>
               <svg className="w-5 h-5 text-amber-400 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
